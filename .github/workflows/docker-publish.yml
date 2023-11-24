@@ -40,9 +40,10 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/image-renamer
           labels: |
             org.opencontainers.image.title=image-renamer
-            org.opencontainers.image.description=Fixes broken npm dependencies for `apollo client:codegen`
-            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}/image-renamer
-            org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}/image-renamer
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.url=${{ github.server_url }}/${{ github.repository }}
+          tags: |
+            type=raw,value=latest
 
 
       - name: Build and push Docker image
