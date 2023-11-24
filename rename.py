@@ -24,6 +24,8 @@ def rename_images(directory_path, exif_tag='EXIF DateTimeOriginal', dry_run=Fals
 
                 new_filename = iso8601_date + os.path.splitext(filename)[1]
                 new_file_path = os.path.join(directory_path, new_filename)
+                if filename == new_filename:
+                    continue
 
                 if dry_run:
                     print(f'Dry Run: Would rename {filename} to {new_filename}')
